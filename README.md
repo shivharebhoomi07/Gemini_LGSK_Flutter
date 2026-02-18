@@ -18,7 +18,8 @@
 ## 📖 Table of Contents
 - [The Problem It Solves](#-the-problem-it-solves)
 - [System Architecture](#-system-architecture)
-- [The Agentic AI Team (Secret Weapon)](#-the-agentic-ai-team-secret-weapon)
+- [Architectural Principles](#-architectural-principles)
+- [The Agentic AI Team](#-the-agentic-ai-team)
 - [Core Features](#-core-features)
 - [Getting Started](#-getting-started)
 - [Repository Structure](#-repository-structure)
@@ -28,10 +29,10 @@
 
 ## 🛑 The Problem It Solves
 
-Developing for a multi-screen **Liquid Galaxy** rig is notoriously unforgiving.  
-A single malformed KML string or a blocking SSH command on the main thread can cause frame drops, network desyncs, or even freeze the physical rig.
+Developing for a multi-screen **Liquid Galaxy** rig is unforgiving.  
+A single malformed KML string or a blocking SSH call can cause frame drops, desync, or even freeze the physical rig.
 
-**The Liquid Galaxy Agentic Starter Kit** eliminates this friction by providing a fortified, Clean Architecture–based Flutter foundation that abstracts away hardware-level complexity.
+The **Liquid Galaxy Agentic Starter Kit** removes this friction by providing a Clean Architecture–based Flutter foundation that abstracts hardware complexity and enforces disciplined execution.
 
 **Core philosophy:**  
 **Go slow, be steady, and never enter an unpredictable error state.**
@@ -40,116 +41,112 @@ A single malformed KML string or a blocking SSH command on the main thread can c
 
 ## 🏗 System Architecture
 
-This starter kit strictly enforces **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**.  
+This starter kit strictly follows **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**.  
 The UI layer is completely decoupled from Liquid Galaxy hardware logic.
 
 ```mermaid
 graph LR
-    A[Flutter UI Widgets] -->|Events| B(BLoC State Management)
-    B -->|Interfaces| C{Domain Repositories}
-    C -->|GetIt Injection| D[SSH Network Service]
-    D -->|KML / Commands| E[(Liquid Galaxy Rig)]
+    A["Flutter UI Widgets"] -->|"Events"| B["BLoC State Management"]
+    B -->|"Interfaces"| C{"Domain Repositories"}
+    C -->|"Dependency Injection (GetIt)"| D["SSH Network Service"]
+    D -->|"KML / Commands"| E["Liquid Galaxy Rig"]
 
     style A fill:#42a5f5,stroke:#1e88e5,stroke-width:2px,color:#fff
     style B fill:#66bb6a,stroke:#43a047,stroke-width:2px,color:#fff
     style D fill:#ef5350,stroke:#e53935,stroke-width:2px,color:#fff
     style E fill:#ffa726,stroke:#fb8c00,stroke-width:2px,color:#fff
-Architectural Principles
-Dumb Views: UI widgets know nothing about IPs, SSH, or hardware state
+🧠 Architectural Principles
+Dumb Views
+UI widgets know nothing about IP addresses, SSH, or hardware state.
 
-App-Authoritative State: BLoC is the single source of truth
+App-Authoritative State
+The BLoC is the single source of truth; Liquid Galaxy screens reflect its state.
 
-Hybrid Sync Protocol:
+Hybrid Sync Protocol
 
-Master node loads KML via hosted links
+Master node loads KMLs via hosted links
 
-Slave nodes sync via SFTP
+Slave nodes sync via secure file transfer
 
-Ensures total visual coverage across the rig
+Ensures consistent visuals across all displays
 
-🤖 The Agentic AI Team (Secret Weapon)
-This repository is more than a template — it includes a Virtual AI Engineering Team inside the .agent/ folder.
+🤖 The Agentic AI Team
+This repository includes a Virtual AI Engineering Team inside the .agent/ folder, powered by Google Gemini.
 
-Powered by Google Gemini, the team consists of specialized agents that enforce a strict, error-resistant workflow.
+Instead of a single chatbot, development is guided through a strict, multi-stage workflow.
 
-🧠 Agent Pipeline
+Agent Pipeline
 Stage	Agent	Responsibility
 1️⃣	lg-init	Scaffolds feature folders with zero boilerplate
-2️⃣	lg-brainstormer	Designs cinematic 3D ideas for the panoramic rig
-3️⃣	lg-plan-writer	Drafts a markdown blueprint before coding
-4️⃣	lg-exec	Implements the plan step-by-step in Dart
-5️⃣	lg-code-reviewer	Audits for memory leaks and UI freezes
-6️⃣	lg-quiz-master	Verifies architectural understanding
+2️⃣	lg-brainstormer	Designs cinematic ideas for the panoramic rig
+3️⃣	lg-plan-writer	Creates a step-by-step blueprint before coding
+4️⃣	lg-exec	Implements the plan incrementally
+5️⃣	lg-code-reviewer	Audits for UI freezes and memory issues
+6️⃣	lg-quiz-master	Validates architectural understanding
 
-🚨 Emergency Brake: lg-skeptical-mentor
-If a developer:
+🚨 Emergency Guardrail
+A specialized skeptical mentor agent halts the workflow if:
 
-Skips steps
+Steps are skipped
 
-Rushes code
+SSH logic leaks into UI
 
-Mixes SSH logic into UI
+Code is rushed without planning
 
-This agent halts the workflow and enforces architectural discipline through review and questioning.
+This enforces architectural discipline throughout development.
 
 ✨ Core Features
-Out of the box, the Starter Kit supports all baseline Liquid Galaxy requirements:
+🛡️ Robust SSH Client with graceful error handling
 
-🛡️ Bulletproof SSH Client (dartssh2 with timeouts & recovery)
+📍 Dynamic KML Engine (heavy computation off the UI thread)
 
-📍 Dynamic KML Engine (heavy XML generated off the UI thread)
-
-🧹 Rig State Management (clear logos, wipe KMLs, reset views)
+🧹 Rig State Management (clear logos, wipe KMLs, reset view)
 
 ⚡ Hardware Controls (reboot, relaunch, power-off cluster)
 
-🧠 Agent-Guided Development Workflow
+🧠 Agent-driven development workflow
 
 🚀 Getting Started
 Prerequisites
 Flutter SDK 3.19+
 
-A physical Liquid Galaxy rig or virtual LG setup
+A physical or virtual Liquid Galaxy setup
 
 Tablet or emulator
 
 Quick Install
 bash
 Copy code
-# Clone repository
-git clone https://github.com/yourusername/Gemini_LGSK_Flutter-Wonder.git
-
-# Enter directory
+git clone https://github.com/shivharebhoomi07/Gemini_LGSK_Flutter-Wonder.git
 cd Gemini_LGSK_Flutter-Wonder
-
-# Fetch dependencies
 flutter pub get
-
-# Run app
 flutter run
 Connection Guide
-Launch the app on your tablet
+Launch the app
 
 Open Connection Settings
 
 Enter Master Node IP, Port (22), Username, Password
 
-Tap Connect and begin your cinematic tour
+Connect and begin the experience
 
 📁 Repository Structure
 plaintext
 Copy code
 /
-├── .agent/          # AI Engineering Team & workflow rules
-├── assets/          # KMLs, logos, static resources
-├── docs/            # Architecture diagrams & blueprints
+├── .agent/          # Agentic AI workflow & rules
+├── assets/          # KMLs, logos, static assets
+├── docs/            # Architecture and planning documents
 ├── lib/
-│   ├── core/        # SSH, constants, utilities
+│   ├── core/        # SSH services, utilities, constants
 │   ├── features/    # Connection, Dashboard, etc.
-│   └── main.dart    # Entry point & dependency injection
+│   └── main.dart    # App entry point & dependency injection
 └── pubspec.yaml
 👨‍💻 About the Author
 Built by Bhoomi Shivhare
 Submitted for the Gemini Summer of Code – Agentic Programming Contest
 
-The skills-based structure of this kit was inspired by Mentor Vitor’s approach and adapted thoughtfully to support a disciplined, scalable Liquid Galaxy development workflow.
+The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
+
+yaml
+Copy code
