@@ -31,7 +31,7 @@ Developing for a multi-screen **Liquid Galaxy** rig is notoriously unforgiving. 
 
 **The Liquid Galaxy Agentic Starter Kit** eliminates this friction. It provides a heavily fortified, enterprise-grade Flutter architecture that abstracts away the complex hardware protocols. It allows you to focus 100% of your energy on designing sweeping, dynamic global tours instead of fighting with SSH timeouts.
 
-**Our core philosophy:** Go slow, be steady, and never enter an unpredictable error state.
+> **Our core philosophy:** Go slow, be steady, and never enter an unpredictable error state.
 
 ---
 
@@ -39,17 +39,16 @@ Developing for a multi-screen **Liquid Galaxy** rig is notoriously unforgiving. 
 
 This kit strictly enforces **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**. The UI is completely decoupled from the Liquid Galaxy hardware logic.
 
-* **Dumb Views:** The UI layers know nothing about IP addresses or SSH connections.
+
+* **Dumb Views:** The UI layers know nothing about IP addresses or connections.
 * **App-Authoritative State:** The **BLoC** pattern is the single source of truth. The rig screens are simply "dumb terminals" reflecting the BLoC's state.
 * **Hybrid Sync Protocol:** The kit automatically handles injecting KMLs into both the Master Node (via links) and Slave Nodes (via SFTP) to guarantee Total Coverage across the physical displays.
-
-
 
 ---
 
 ## 🤖 The Agentic AI Team (Secret Weapon)
 
-This repository is not just a template; it comes with a **Virtual AI Engineering Team** living inside the `.agent/` folder. Powered by **Google Gemini**, this team consists of 10 specialized AI agents. Instead of relying on one easily confused chatbot, you can use these `SKILL.md` files to guide you through a strict, 6-stage error-free development pipeline:
+This repository is not just a template; it comes with a **Virtual AI Engineering Team** living inside the `.agent/` folder. Powered by **Google Gemini**, this team consists of 10 specialized AI agents. You can use these `SKILL.md` files to guide you through a strict, 6-stage error-free development pipeline:
 
 | Stage | Agent Name | Role in the Pipeline |
 | :--- | :--- | :--- |
@@ -60,8 +59,7 @@ This repository is not just a template; it comes with a **Virtual AI Engineering
 | 5️⃣ | **🧐 lg-code-reviewer** | Audits your code for memory leaks and UI freezes before deployment. |
 | 6️⃣ | **🎙️ lg-quiz-master** | Quizzes you on your own code to ensure you actually learned the architecture! |
 
-> [!WARNING]
-> **🚨 The Emergency Brake (lg-skeptical-mentor):** If a developer attempts to skip steps, rush their code, or merge messy SSH logic directly into the UI, this specialized agent will autonomously halt the workflow and administer a pop-quiz on Clean Architecture to protect the repository's integrity.
+🚨 **The Emergency Brake (lg-skeptical-mentor):** If a developer attempts to skip steps or rush their code, this specialized agent will autonomously halt the workflow and administer a pop-quiz on Clean Architecture to protect the repository's integrity.
 
 ---
 
@@ -70,7 +68,7 @@ This repository is not just a template; it comes with a **Virtual AI Engineering
 Out of the box, the Starter Kit fulfills all baseline Liquid Galaxy requirements:
 
 * **🛡️ Bulletproof SSH Client:** Managed via `dartssh2` with graceful timeout and error handling.
-* **📍 Dynamic KML Engine:** Offloads heavy XML string generation to background threads/isolates to keep the UI smooth.
+* **📍 Dynamic KML Engine:** Offloads heavy XML string generation to background threads/isolates.
 * **🧹 Rig State Management:** Built-in commands to instantly clear logos, wipe KMLs, and reset the view.
 * **⚡ Hardware Control:** Directly reboot, relaunch, or power-off the LG cluster from the tablet UI.
 
@@ -86,7 +84,7 @@ Out of the box, the Starter Kit fulfills all baseline Liquid Galaxy requirements
 ### Quick Install
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/yourusername/Gemini_LGSK_Flutter.git](https://github.com/yourusername/Gemini_LGSK_Flutter.git)
+git clone [https://github.com/shivharebhoomi07/Gemini_LGSK_Flutter.git](https://github.com/shivharebhoomi07/Gemini_LGSK_Flutter.git)
 
 # 2. Enter the directory
 cd Gemini_LGSK_Flutter
@@ -114,7 +112,7 @@ Plaintext
 ├── lib/
 │   ├── core/          # ⚙️ Global Toolkit (SSH Service, App Constants, Utilities)
 │   ├── features/      # 🚀 Isolated App Features (Connection, Dashboard, etc.)
-│   └── main.dart      # 🏁 App Entry Point & Dependency Injection
+│   └── main.dart      # 🏁 App Entry Point & GetIt Injection
 └── pubspec.yaml       # 📦 Dependencies
 👨‍💻 About the Author
 Built by Bhoomi Shivhare
