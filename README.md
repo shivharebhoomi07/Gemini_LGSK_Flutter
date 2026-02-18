@@ -44,17 +44,6 @@ The **Liquid Galaxy Agentic Starter Kit** removes this friction by providing a C
 This starter kit strictly follows **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**.  
 The UI layer is completely decoupled from Liquid Galaxy hardware logic.
 
-```mermaid
-graph LR
-    A["Flutter UI Widgets"] -->|"Events"| B["BLoC State Management"]
-    B -->|"Interfaces"| C{"Domain Repositories"}
-    C -->|"Dependency Injection (GetIt)"| D["SSH Network Service"]
-    D -->|"KML / Commands"| E["Liquid Galaxy Rig"]
-
-    style A fill:#42a5f5,stroke:#1e88e5,stroke-width:2px,color:#fff
-    style B fill:#66bb6a,stroke:#43a047,stroke-width:2px,color:#fff
-    style D fill:#ef5350,stroke:#e53935,stroke-width:2px,color:#fff
-    style E fill:#ffa726,stroke:#fb8c00,stroke-width:2px,color:#fff
 🧠 Architectural Principles
 Dumb Views
 UI widgets know nothing about IP addresses, SSH, or hardware state.
@@ -150,3 +139,4 @@ The skills-based agent structure was inspired by Mentor Vitor’s approach and t
 
 yaml
 Copy code
+
