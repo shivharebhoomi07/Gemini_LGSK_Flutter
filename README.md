@@ -131,12 +131,13 @@ Copy code
 │   ├── features/    # Connection, Dashboard, etc.
 │   └── main.dart    # App entry point & dependency injection
 └── pubspec.yaml
+
+
 👨‍💻 About the Author
 Built by Bhoomi Shivhare
 Submitted for the Gemini Summer of Code – Agentic Programming Contest
 
 The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
 
-yaml
-Copy code
+
 
