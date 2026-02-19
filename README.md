@@ -39,7 +39,6 @@ Developing for a multi-screen **Liquid Galaxy** rig is notoriously unforgiving. 
 
 This kit strictly enforces **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**. The UI is completely decoupled from the Liquid Galaxy hardware logic.
 
-
 * **Dumb Views:** The UI layers know nothing about IP addresses or connections.
 * **App-Authoritative State:** The **BLoC** pattern is the single source of truth. The rig screens are simply "dumb terminals" reflecting the BLoC's state.
 * **Hybrid Sync Protocol:** The kit automatically handles injecting KMLs into both the Master Node (via links) and Slave Nodes (via SFTP) to guarantee Total Coverage across the physical displays.
@@ -59,7 +58,7 @@ This repository is not just a template; it comes with a **Virtual AI Engineering
 | 5️⃣ | **🧐 lg-code-reviewer** | Audits your code for memory leaks and UI freezes before deployment. |
 | 6️⃣ | **🎙️ lg-quiz-master** | Quizzes you on your own code to ensure you actually learned the architecture! |
 
-🚨 **The Emergency Brake (lg-skeptical-mentor):** If a developer attempts to skip steps or rush their code, this specialized agent will autonomously halt the workflow and administer a pop-quiz on Clean Architecture to protect the repository's integrity.
+🚨 **The Emergency Brake (`lg-skeptical-mentor`):** If a developer attempts to skip steps or rush their code, this specialized agent will autonomously halt the workflow and administer a pop-quiz on Clean Architecture to protect the repository's integrity.
 
 ---
 
@@ -94,17 +93,18 @@ flutter pub get
 
 # 4. Run the controller app
 flutter run
-Connection Guide
-Launch the app on your tablet.
+```
 
-Open the Connection Settings dashboard.
+### Connection Guide
+1. Launch the app on your tablet.
+2. Open the **Connection Settings** dashboard.
+3. Input your Rig's Master Node IP, Port (default: `22`), Username, and Password.
+4. Tap **Connect** and begin your orbit!
 
-Input your Rig's Master Node IP, Port (default: 22), Username, and Password.
+---
 
-Tap Connect and begin your orbit!
-
-📁 Repository Structure
-Plaintext
+## 📁 Repository Structure
+```text
 /
 ├── .agent/            # 🧠 The AI Virtual Engineering Team & strict rules
 ├── assets/            # 🎨 Local KMLs and Logos
@@ -114,8 +114,12 @@ Plaintext
 │   ├── features/      # 🚀 Isolated App Features (Connection, Dashboard, etc.)
 │   └── main.dart      # 🏁 App Entry Point & GetIt Injection
 └── pubspec.yaml       # 📦 Dependencies
-👨‍💻 About the Author
-Built by Bhoomi Shivhare
-Submitted for the Gemini Summer of Code – Agentic Programming Contest
+```
 
-The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
+---
+
+## 👨‍💻 About the Author
+
+Built by **Bhoomi Shivhare** *Submitted for the Gemini Summer of Code – Agentic Programming Contest*
+
+> The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
