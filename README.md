@@ -138,3 +138,7 @@ Built by **Bhoomi Shivhare** *Submitted for the Gemini Summer of Code – Agenti
 
 > The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
 
+
+---
+📄 Read The Agentic Manifesto here for a deep dive into the engineering philosophy and AI pipeline behind this kit:
+https://docs.google.com/document/d/10OKvAGe2V7LmYyL6xw9tj7mdKEF6yk-BhgP5DD8Wn14/edit?usp=sharing
