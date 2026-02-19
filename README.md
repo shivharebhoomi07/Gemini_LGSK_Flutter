@@ -33,15 +33,29 @@ Developing for a multi-screen **Liquid Galaxy** rig is notoriously unforgiving. 
 
 > **Our core philosophy:** Go slow, be steady, and never enter an unpredictable error state.
 
+
+
 ---
 
 ## 🏗 System Architecture 
 
-This kit strictly enforces **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**. The UI is completely decoupled from the Liquid Galaxy hardware logic.
+The codebase strictly enforces **Clean Architecture** and the **Dependency Inversion Principle (S.O.L.I.D)**. 
 
-* **Dumb Views:** The UI layers know nothing about IP addresses or connections.
-* **App-Authoritative State:** The **BLoC** pattern is the single source of truth. The rig screens are simply "dumb terminals" reflecting the BLoC's state.
-* **Hybrid Sync Protocol:** The kit automatically handles injecting KMLs into both the Master Node (via links) and Slave Nodes (via SFTP) to guarantee Total Coverage across the physical displays.
+* **Dumb Views:** The UI layers (`features/dashboard/presentation/pages`) know nothing about IP addresses or connections.
+* **App-Authoritative State:** The BLoC is the single source of truth. The rig screens are simply "dumb terminals" reflecting the BLoC's state.
+
+```mermaid
+graph LR
+    A[Flutter UI Widgets] -->|Events| B(BLoC State Management)
+    B -->|Interfaces| C{Domain Repositories}
+    C -->|GetIt Injection| D[SSH Network Service]
+    D -->|KML / Commands| E[(Liquid Galaxy Rig)]
+    
+    style A fill:#42a5f5,stroke:#1e88e5,stroke-width:2px,color:#fff
+    style B fill:#66bb6a,stroke:#43a047,stroke-width:2px,color:#fff
+    style D fill:#ef5350,stroke:#e53935,stroke-width:2px,color:#fff
+    style E fill:#ffa726,stroke:#fb8c00,stroke-width:2px,color:#fff
+```
 
 ---
 
@@ -123,3 +137,4 @@ flutter run
 Built by **Bhoomi Shivhare** *Submitted for the Gemini Summer of Code – Agentic Programming Contest*
 
 > The skills-based agent structure was inspired by Mentor Vitor’s approach and thoughtfully adapted to support a disciplined, scalable Liquid Galaxy development workflow.
+
